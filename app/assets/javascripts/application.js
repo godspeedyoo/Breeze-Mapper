@@ -14,4 +14,4 @@
 //= require_tree ./angular
 
 //= require angular/angular
-//= require angular-ui/ui-router
+//= require angular-ui/angular-ui-router
