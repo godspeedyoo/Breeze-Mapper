@@ -11,7 +11,17 @@
 // about supported directives.
 //
 
-//= require_tree ./angular
+//= require angular
+//= require ng-app/app
+//= require_tree .
 
 //= require angular/angular
-//= require angular-ui/angular-ui-router
+//= require angular-animate
+//= require Chart.js/Chart
+//= require Chart
+//= require angular-chart.js/angular-chart
+//= require angular-ui-router
+//= require angular-rails-templates
+//= require jquery
+//= require bootstrap-sass-official
+//= require_tree ../templates
