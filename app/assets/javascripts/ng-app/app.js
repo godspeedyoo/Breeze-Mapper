@@ -16,7 +16,8 @@ angular
             url: '/',
             views: {
                 '': { 
-                    templateUrl: 'home.html' 
+                    templateUrl: 'home.html',
+                    controller: 'HomeCtrl'
                 },
 
                 'chart@home': { 
