@@ -6,8 +6,8 @@ gem 'ng-rails-csrf', '~> 0.1.0'
 gem 'rails', '4.0.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
-gem "bower-rails", "~> 0.9.2"
-gem "angular-rails-templates"
+gem 'bower-rails', '~> 0.9.2'
+gem 'angular-rails-templates'
 gem 'chart-js-rails'
 # gem 'turbolinks'
 
