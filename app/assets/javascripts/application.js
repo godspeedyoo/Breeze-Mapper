@@ -21,7 +21,7 @@
 //= require Chart
 //= require angular-chart.js/angular-chart
 //= require angular-ui-router
+//= require bootstrap-css/js/bootstrap
 //= require angular-rails-templates
-//= require jquery
-//= require bootstrap-sass-official
+//= require angular-bootstrap/ui-bootstrap
 //= require_tree ../templates

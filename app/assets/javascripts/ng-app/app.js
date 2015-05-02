@@ -3,7 +3,8 @@ angular
         'ngAnimate',
         'ui.router',
         'templates',
-        'chart.js'
+        'chart.js',
+        'ui.bootstrap'
     ])
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
