@@ -1,8 +1,8 @@
 <div class="container">
-    <div class="jumbotron"></div>
     <h1>The Home View!</h1>
     <button ng-click="locationToggle = !locationToggle" class="btn btn-default">Show Locations</button>
     <button ng-click="userToggle = !userToggle" class="btn btn-default">Show Users</button>
+    <button ng-click="transactionToggle = !transactionToggle" class="btn btn-default">Show Transactions</button>
 
 
     <ul ng-show="locationToggle">
@@ -11,5 +11,15 @@
     <ul ng-show="userToggle">
         <li ng-repeat="user in users">{{user}}</li>
     </ul>
+    <ul ng-show="transactionToggle">
+        <li ng-repeat="transaction in transactions">{{transaction}}</li>
+    </ul>
 
+       <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas> 
+
+
+    <div>
+        <div ui-view="chart"></div>
+    </div>
 </div>
+

@@ -14,9 +14,32 @@ angular
     $stateProvider
         .state('home', {
             url: '/',
-            templateUrl: 'home.html',
-            controller: 'HomeCtrl'
+            views: {
+                '': { 
+                    templateUrl: 'home.html' 
+                },
+
+                'chart@home': { 
+                    templateUrl: 'charts.html'
+                }
+            }
+        })
+        .state('about', {
+            url: '/about',
+            templateUrl: 'about.html'
         });
+
+
+            // views: {
+            //     'filters': {
+            //         templateUrl: 'templates/filters.html',
+            //         controller: 'FilterCtrl'
+            //     },
+            //     'charts': {
+            //         templateUrl: 'home.html',
+            //         controller: 'HomeCtrl'
+            //     }
+            // }
 
     // default fall back route
     $urlRouterProvider.otherwise('/');

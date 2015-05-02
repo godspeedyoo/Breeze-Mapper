@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('myApp')
 .factory('userService', ['$http', function($http) {
 	var users = {};
@@ -7,4 +9,4 @@ angular.module('myApp')
 	}
 
 	return users;
-}])
+}]);
