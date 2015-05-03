@@ -4,7 +4,8 @@ angular
         'ui.router',
         'templates',
         'chart.js',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'angularSlideables'
     ])
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -21,7 +22,8 @@ angular
                 },
 
                 'chart@home': { 
-                    templateUrl: 'charts.html'
+                    templateUrl: 'charts.html',
+                    controller: 'ChartCtrl'
                 }
             }
         })

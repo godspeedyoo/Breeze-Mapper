@@ -17,6 +17,7 @@
 
 //= require angular/angular
 //= require angular-animate
+//= require angularSlideables
 //= require Chart.js/Chart
 //= require Chart
 //= require angular-chart.js/angular-chart
