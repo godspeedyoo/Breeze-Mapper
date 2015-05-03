@@ -35,7 +35,6 @@ angular.module('myApp')
   $scope.data = [
       $scope.chartData.earnings
   ];
-  $scope.options = { showXLabels: 10 }
   $scope.onClick = function (points, evt) {
      console.log(points, evt);
   };
