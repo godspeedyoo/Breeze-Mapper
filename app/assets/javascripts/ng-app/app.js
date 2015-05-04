@@ -37,11 +37,6 @@ angular
 .run(function($rootScope) {
 
     $rootScope.UTIL = {
-        // returns suppressed labels due to lack of grouping
-        // of data label points in chartjs library.
-        // This allows for inefficient use of space in array elements 
-        // that are used as spacers and can be concern in a large 
-        // data set. 
         suppressLabels: function(chartLabels, div) {
             var suppressMod = parseInt(chartLabels.length / div);
             var suppressed = [];
