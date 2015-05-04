@@ -36,12 +36,7 @@ angular.module('myApp')
       });
     })
   }
-  
-
-  transactionService.getTransactions('charge').success(function(response) {
-    $scope.transactions.charges = response;
-  })
-  
+    
   // chart.js 
 
   $scope.labels = $scope.chartData.labels;
