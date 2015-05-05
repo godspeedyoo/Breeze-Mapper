@@ -23,10 +23,6 @@ angular.module('myApp')
     $scope.charges = { data: [ [] ], labels: [], series: ['Charges'] };
   } 
 
-  // locationService.getLocations().success(function(response) {
-  //   $scope.locations = response;
-  // })
-  
   $rootScope.$on('updateUsers', function() {
     alert("users updated");
   })
