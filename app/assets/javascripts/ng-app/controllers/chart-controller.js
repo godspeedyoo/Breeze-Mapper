@@ -28,12 +28,12 @@ angular.module('myApp')
     $scope.users = response;
   })
 
-  $scope.getTransactions = function(transaction_type) {
+  $scope.getTransactions = function(options) {
     // reset data if it exists
     $scope.chartData.transactions = {};
     $scope.resetChartData();
 
-    transactionService.getTransactions(transaction_type).success(function(response) {
+    transactionService.getTransactions(options).success(function(response) {
       $scope.chartData.transactions = response;
 
       $scope.chartData.transactions.forEach(function(el, i, arr) {
