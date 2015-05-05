@@ -20,9 +20,9 @@ angular.module('myApp')
     $scope.data = [];
   } 
 
-  locationService.getLocations().success(function(response) {
-    $scope.locations = response;
-  })
+  // locationService.getLocations().success(function(response) {
+  //   $scope.locations = response;
+  // })
 
   userService.getUsers().success(function(response) {
     $scope.users = response;
