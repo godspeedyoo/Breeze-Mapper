@@ -17,12 +17,14 @@ angular
                     templateUrl: 'home.html',
                     controller: 'HomeCtrl'
                 },
-
-                'chart@home': { 
-                    templateUrl: 'charts.html',
-                    controller: 'TransactionCtrl'
+                'chart@home': {
+                    templateUrl: 'charts.html'
                 }
             }
+        })
+        .state('home.transactions', {
+            templateUrl: 'charts.transactions.html',
+            controller: 'TransactionCtrl'
         })
         .state('about', {
             url: '/about',
