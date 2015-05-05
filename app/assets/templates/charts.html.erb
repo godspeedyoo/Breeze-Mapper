@@ -1,8 +1,8 @@
 <h1 class="slide" slide-toggle="#chart">This is the charts template</h1>
-<button class="btn btn-primary" ng-click="getTransactions('earning')">Earnings</button>
-<button class="btn btn-primary" ng-click="getTransactions('charge')">Charges</button>
-<button class="btn btn-primary" ng-click="clearTransactions()">Clear Transactions</button>
 <div id="chart" class="slideable">
+	<button class="btn btn-primary" ng-click="getTransactions({'type': 'earning', 'user_id': 9})">Earnings</button>
+	<button class="btn btn-primary" ng-click="getTransactions('charge')">Charges</button>
+	<button class="btn btn-primary" ng-click="resetChartData()">Clear Transactions</button>
 
 	<canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" options="options" series="series" click="onClick"></canvas> 
 </div>

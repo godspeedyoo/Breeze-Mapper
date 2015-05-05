@@ -1,21 +1,34 @@
 angular.module('myApp')
 .controller('ChartCtrl', ['userService', 'locationService', 'transactionService', '$scope',
-	function (userService, locationService, transactionService, $scope) {
+  function (userService, locationService, transactionService, $scope) {
 
   $scope.chartData = {};
   $scope.chartData.transactions = {};
   $scope.chartData.data = [];
   $scope.chartData.labels = [];
+  
+  // Chart utility functions
+  $scope.resetChartData = function() {
+    $scope.chartData.data = [];
+    $scope.chartData.labels = [];
+    $scope.labels = [];
+    $scope.series = [];
+    $scope.data = [];
+  } 
 
   locationService.getLocations().success(function(response) {
-  	$scope.locations = response;
+    $scope.locations = response;
   })
 
   userService.getUsers().success(function(response) {
-  	$scope.users = response;
+    $scope.users = response;
   })
 
   $scope.getTransactions = function(transaction_type) {
+    // reset data if it exists
+    $scope.chartData.transactions = {};
+    $scope.resetChartData();
+
     transactionService.getTransactions(transaction_type).success(function(response) {
       $scope.chartData.transactions = response;
 
@@ -35,16 +48,17 @@ angular.module('myApp')
         )}
       });
     })
-  }
-    
-  // chart.js 
 
-  $scope.labels = $scope.chartData.labels;
-  $scope.series = ['Earned', 'Charged'];
-  $scope.data = [ $scope.chartData.data ];
-  $scope.onClick = function (points, evt) {
-     console.log(points, evt);
-  };
+    $scope.labels = $scope.chartData.labels;
+    $scope.series = ['Earned', 'Charged'];
+    $scope.data = [ $scope.chartData.data ];
+  }
+  
+
+  // chart.js 
+  // $scope.onClick = function (points, evt) {
+  //    console.log(points, evt);
+  // };
 
 
 }]);
