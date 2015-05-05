@@ -2,9 +2,7 @@
 <div id="chart" class="slideable">
 
 	User:
-	<select ng-model="userId" class="form-control select-user">
-	  <option>4</option>
-	  <option>5</option>
+	<select ng-model="userId" class="form-control select-user" ng-options="user.id as user.name for user in users">
 	</select>
 
 	<div class="checkbox">
@@ -20,6 +18,7 @@
 
 	{{filters.earning}}
 	{{filters.charge}}
+	{{userId}}
 	{{transactionType}}
 
 
