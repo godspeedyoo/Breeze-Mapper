@@ -26,6 +26,14 @@ angular
             templateUrl: 'charts.transactions.html',
             controller: 'TransactionCtrl'
         })
+        .state('home.locations', {
+            templateUrl: 'charts.locations.html',
+            controller: 'LocationCtrl'
+        })
+        .state('home.users', {
+            templateUrl: 'charts.users.html',
+            controller: 'UserCtrl'
+        })
         .state('about', {
             url: '/about',
             templateUrl: 'about.html'
