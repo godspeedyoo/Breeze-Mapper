@@ -1,6 +1,42 @@
 <h1 class="slide" slide-toggle="#chart">This is the charts template</h1>
 <div id="chart" class="slideable">
-	<input ng-model="userId" type="number"></input>
+
+	User:
+	<select ng-model="userId" class="form-control select-user">
+	  <option>4</option>
+	  <option>5</option>
+	</select>
+
+	<div class="checkbox">
+		<label>
+			<input ng-model="filters.earning" type="checkbox">Earning
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input ng-model="filters.charge" type="checkbox">Charge
+		</label>
+	</div>
+
+	{{filters.earning}}
+	{{filters.charge}}
+	{{transactionType}}
+
+
+	<!-- Single button -->
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+	    Action <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" role="menu">
+	    <li><a href="#">Action</a></li>
+	    <li><a href="#">Another action</a></li>
+	    <li><a href="#">Something else here</a></li>
+	    <li class="divider"></li>
+	    <li><a href="#">Separated link</a></li>
+	  </ul>
+	</div>
+
 	<button class="btn btn-primary" ng-click="getTransactions({'type': 'earning', 'user_id': userId })">Earnings</button>
 	<button class="btn btn-primary" ng-click="getTransactions('charge')">Charges</button>
 	<button class="btn btn-primary" ng-click="resetChartData()">Clear Transactions</button>

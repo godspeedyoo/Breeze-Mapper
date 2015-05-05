@@ -24,4 +24,6 @@
 //= require angular-ui-router
 //= require angular-rails-templates
 //= require angular-bootstrap/ui-bootstrap
+//= require jquery
+//= require bootstrap-css/js/bootstrap
 //= require_tree ../templates

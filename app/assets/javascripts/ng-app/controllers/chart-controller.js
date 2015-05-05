@@ -2,12 +2,16 @@ angular.module('myApp')
 .controller('ChartCtrl', ['userService', 'locationService', 'transactionService', '$scope',
   function (userService, locationService, transactionService, $scope) {
 
+  // define default filter settings
+  $scope.filters = { earning: false, charge: false, userId: null }
+
+  // initialize chartData to be passed into chartjs values
   $scope.chartData = {};
   $scope.chartData.transactions = {};
   $scope.chartData.data = [];
   $scope.chartData.labels = [];
-  
-  // Chart utility functions
+
+  // utility function to reset and trigger re-rendering of chart
   $scope.resetChartData = function() {
     $scope.chartData.data = [];
     $scope.chartData.labels = [];
@@ -40,7 +44,7 @@ angular.module('myApp')
         // data set, however is a temporary workaround to enable clean labels.
         $scope.chartData.data.push(el.amount);
         // store empty string to 'skip' (every 20) the label from being rendered.
-        if (i % 20 != 0) { $scope.chartData.labels.push("") }
+        if (i % 20 != 0 && $scope.chartData.transactions.length > 20) { $scope.chartData.labels.push("") }
         else { 
           $scope.chartData.labels.push(
             // applies chart-ready formatting to dates
