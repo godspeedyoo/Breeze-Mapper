@@ -1,6 +1,14 @@
 angular.module('myApp')
-.controller('TransactionCtrl', ['userService', 'locationService', 'transactionService', '$scope',
-  function (userService, locationService, transactionService, $scope) {
+.controller('TransactionCtrl', ['userService', 
+                                'locationService', 
+                                'transactionService', 
+                                '$scope',
+                                '$rootScope',
+  function (userService, 
+            locationService, 
+            transactionService, 
+            $scope,
+            $rootScope) {
 
   // define default filter settings
   $scope.filters = { earning: false, charge: false, userId: null }
@@ -18,9 +26,9 @@ angular.module('myApp')
   // locationService.getLocations().success(function(response) {
   //   $scope.locations = response;
   // })
-
-  userService.getUsers().success(function(response) {
-    $scope.users = response;
+  
+  $rootScope.$on('updateUsers', function() {
+    alert("users updated");
   })
 
   $scope.getTransactions = function(options) {
