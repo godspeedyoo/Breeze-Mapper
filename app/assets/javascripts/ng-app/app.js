@@ -17,6 +17,7 @@ angular
                 '@': { templateUrl: 'home.html'},
                 // target test section of home page
                 'test@home': { templateUrl: 'test.html' },
+                'control@home': { templateUrl: 'control-panel.html'},
                 // target chart section of home page
                 'charts@home': { templateUrl: 'charts.html' }
             }
