@@ -31,4 +31,8 @@ function ($scope,
   	ctrlPanelService.setUserId($scope.userId);
   })
 
+  // submit button is using service in order to decouple the generic 'submit' action
+  // as it will also rely on broadcast events
+  $scope.submit = function() { ctrlPanelService.submit() }
+
 }]);

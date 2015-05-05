@@ -25,13 +25,14 @@ angular.module('myApp')
     $scope.charges = { data: [ [] ], labels: [], series: ['Charges'] };
   } 
 
+  // listeners waiting for control panel changes
   $rootScope.$on('updateUserId', function() {
     $scope.userId = ctrlPanelService.userId;
-    alert('userId updated in transaction controller');
-  })
+  });
 
-
-  $scope.getTransactions = function(options) {
+  $rootScope.$on('submit', function() {
+    // define options to pass to service - refactor if use of options is extended later
+    var options = {'userId': $scope.userId };
     // reset data if it exists
     $scope.resetChartData();
     // use service to send get request and store and format the response in chart's data & labels
@@ -51,7 +52,7 @@ angular.module('myApp')
         $scope.charges.labels.push(el.created_at.split('T')[0].slice());
       });
     })
-  }
+  });
   
   // chart.js 
   // $scope.onClick = function (points, evt) {
