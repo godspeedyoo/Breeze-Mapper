@@ -2,7 +2,7 @@
 <div id="chart" class="slideable">
 
 	User:
-	<select ng-model="userId" class="form-control select-user" ng-options="user.id as user.name for user in users">
+	<select ng-model="filters.userId" class="form-control select-user" ng-options="user.id as user.name for user in users">
 	</select>
 
 	<div class="checkbox">
@@ -16,29 +16,14 @@
 		</label>
 	</div>
 
-	{{filters.earning}}
+	<p>{{filters.earning}}
 	{{filters.charge}}
-	{{userId}}
-	{{transactionType}}
+	{{filters.userId}}
+	{{transactionType}}</p>
 
+	<button class="btn btn-primary" ng-click="getTransactions({'earning': filters.earning, 'charge': filters.charge, 'userId': filters.userId })">Submit</button>
 
-	<!-- Single button -->
-	<div class="btn-group">
-	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-	    Action <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu" role="menu">
-	    <li><a href="#">Action</a></li>
-	    <li><a href="#">Another action</a></li>
-	    <li><a href="#">Something else here</a></li>
-	    <li class="divider"></li>
-	    <li><a href="#">Separated link</a></li>
-	  </ul>
-	</div>
-
-	<button class="btn btn-primary" ng-click="getTransactions({'type': 'earning', 'user_id': userId })">Earnings</button>
-	<button class="btn btn-primary" ng-click="getTransactions('charge')">Charges</button>
-	<button class="btn btn-primary" ng-click="resetChartData()">Clear Transactions</button>
-
-	<canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" options="options" series="series" click="onClick"></canvas> 
+	<canvas id="line" class="chart chart-line" data="earningData" labels="labels" legend="true" options="options" series="series" click="onClick"></canvas> 
+	
+	<canvas id="line" class="chart chart-line" data="chargeData" labels="labels" legend="true" options="options" series="series" click="onClick"></canvas> 
 </div>
