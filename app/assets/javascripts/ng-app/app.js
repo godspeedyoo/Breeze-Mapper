@@ -20,7 +20,7 @@ angular
 
                 'chart@home': { 
                     templateUrl: 'charts.html',
-                    controller: 'ChartCtrl'
+                    controller: 'TransactionCtrl'
                 }
             }
         })

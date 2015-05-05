@@ -1,25 +1,18 @@
 angular.module('myApp')
-.controller('ChartCtrl', ['userService', 'locationService', 'transactionService', '$scope',
+.controller('TransactionCtrl', ['userService', 'locationService', 'transactionService', '$scope',
   function (userService, locationService, transactionService, $scope) {
 
   // define default filter settings
   $scope.filters = { earning: false, charge: false, userId: null }
 
   // initialize chartData to be passed into chartjs values
-  $scope.earnings = {};
-  $scope.earnings.data = [ [] ]; // chart data must be a nested array
-  $scope.earnings.labels = []; // data labels for x-axis
-  $scope.earnings.series = ['Earnings']; // series label - because data points between earnings/transactions do not line up on the same dates, we will not have both earnings and transactions on a single chart
-  
-  $scope.charges = {};
-  $scope.charges.data = [ [] ];
-  $scope.charges.labels = [];
-  $scope.charges.series = ['Charges'];
+  $scope.earnings = { data: [ [] ], labels: [], series: ['Earnings'] };
+  $scope.charges = { data: [ [] ], labels: [], series: ['Charges'] };
 
   // utility function to reset and trigger re-rendering of chart
   $scope.resetChartData = function() {
     $scope.earnings = { data: [ [] ], labels: [], series: ['Earnings'] };
-    $scope.earnings = { data: [ [] ], labels: [], series: ['Earnings'] };
+    $scope.charges = { data: [ [] ], labels: [], series: ['Charges'] };
   } 
 
   // locationService.getLocations().success(function(response) {
