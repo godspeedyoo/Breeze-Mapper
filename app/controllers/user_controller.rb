@@ -4,7 +4,7 @@ class UserController < ApplicationController
 		render :json => @users
 	end
 
-	
+		
 
 
 
