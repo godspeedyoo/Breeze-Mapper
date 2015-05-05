@@ -1,5 +1,8 @@
 class TransactionController < ApplicationController
 	def index
+		puts "*"*50
+		puts params
+		
 		# allow requests of different specificity: by user, transaction type, or all
 		if params[:user_id]
 			@transactions = Transaction.where(user_id: params[:user_id]).order('created_at ASC')
