@@ -5,15 +5,22 @@ angular.module('myApp')
 															'locationService',
 															'transactionService',
 															'ctrlPanelService',
+                              'dataService',
 function ($scope, 
 				 $rootScope, 
 				 userService, 
 				 locationService, 
 				 transactionService,
-				 ctrlPanelService) {
+				 ctrlPanelService,
+         dataService) {
 	// Call user service to obtain user data, store it in ctrlpanel service and let it broadcast
   userService.getUsers().success(function(response) {
     ctrlPanelService.updateUsers(response);
+  })
+
+  dataService.getData().success(function(response) {
+    console.log(response);
+    debugger;
   })
   
   // listen for the updated users broadcast and store data in controller scope
