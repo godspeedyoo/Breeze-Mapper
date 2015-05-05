@@ -21,7 +21,7 @@
 	{{filters.userId}}
 	{{transactionType}}</p>
 
-	<button class="btn btn-primary" ng-click="getTransactions({'earning': filters.earning, 'charge': filters.charge, 'userId': filters.userId })">Submit</button>
+	<button class="btn btn-primary" ng-click="getTransactions({'userId': filters.userId })">Submit</button>
 
 	<canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" options="options" series="series" click="onClick"></canvas> 
 	
