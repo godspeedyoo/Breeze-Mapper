@@ -5,11 +5,8 @@ angular.module('myApp')
 	var transactions = {};
 
 	transactions.getTransactions = function(options) {
-		var userOption = 'user_id=' + options['userId'] + '&';
-		// var earningOption = 'earning=' + options['earning'] + '&';
-		// var chargeOption = 'charge=' + options['charge'] + '&';
-		return $http.get('/transactions' + '?' + 
-											userOption);
+		var userOption = 'user_id=' + options['userId'];
+		return $http.get('/transactions' + '?' + userOption)
 	}
 
 	return transactions;
