@@ -1,12 +1,14 @@
 angular.module('myApp')
 .controller('TransactionCtrl', ['userService', 
                                 'locationService', 
-                                'transactionService', 
+                                'transactionService',
+                                'ctrlPanelService', 
                                 '$scope',
                                 '$rootScope',
   function (userService, 
             locationService, 
             transactionService, 
+            ctrlPanelService,
             $scope,
             $rootScope) {
 
@@ -23,9 +25,11 @@ angular.module('myApp')
     $scope.charges = { data: [ [] ], labels: [], series: ['Charges'] };
   } 
 
-  $rootScope.$on('updateUsers', function() {
-    alert("users updated");
+  $rootScope.$on('updateUserId', function() {
+    $scope.userId = ctrlPanelService.userId;
+    alert('userId updated in transaction controller');
   })
+
 
   $scope.getTransactions = function(options) {
     // reset data if it exists
