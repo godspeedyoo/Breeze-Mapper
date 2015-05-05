@@ -1,1 +1,16 @@
-<h1>Users Tab</h1>
+<h1>User Statistics</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

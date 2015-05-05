@@ -12,6 +12,14 @@ angular.module('myApp')
             $scope,
             $rootScope) {
 
+  // initialize data
+  $scope.userId = ctrlPanelService.userId;
+
+  // listeners waiting for control panel changes
+  $rootScope.$on('updateUserId', function() {
+    $scope.userId = ctrlPanelService.userId;
+  });
+
   // define default filter settings
   $scope.filters = { earning: false, charge: false, userId: null }
 
@@ -25,10 +33,6 @@ angular.module('myApp')
     $scope.charges = { data: [ [] ], labels: [], series: ['Charges'] };
   } 
 
-  // listeners waiting for control panel changes
-  $rootScope.$on('updateUserId', function() {
-    $scope.userId = ctrlPanelService.userId;
-  });
 
   $rootScope.$on('submit', function() {
     // define options to pass to service - refactor if use of options is extended later
