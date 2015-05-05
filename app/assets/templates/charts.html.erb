@@ -1,6 +1,7 @@
 <h1 class="slide" slide-toggle="#chart">This is the charts template</h1>
 <div id="chart" class="slideable">
-	<button class="btn btn-primary" ng-click="getTransactions({'type': 'earning', 'user_id': 9})">Earnings</button>
+	<input ng-model="userId" type="number"></input>
+	<button class="btn btn-primary" ng-click="getTransactions({'type': 'earning', 'user_id': userId })">Earnings</button>
 	<button class="btn btn-primary" ng-click="getTransactions('charge')">Charges</button>
 	<button class="btn btn-primary" ng-click="resetChartData()">Clear Transactions</button>
 
