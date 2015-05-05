@@ -13,8 +13,11 @@ angular
         .state('home', {
             url: '',
             views: {
+                // target root 
                 '@': { templateUrl: 'home.html'},
+                // target test section of home page
                 'test@home': { templateUrl: 'test.html' },
+                // target chart section of home page
                 'charts@home': { templateUrl: 'charts.html' }
             }
         })
@@ -33,22 +36,6 @@ angular
             templateUrl: 'charts.locations.html',
             controller: 'LocationCtrl'
         })
-        //     templateUrl: 'charts.html',
-        //     views: {
-        //         'transactions@chart': {
-        //             templateUrl: 'charts.transactions.html',
-        //             controller: 'TransactionCtrl'
-        //         }
-        //     }
-        // })
-        // .state('home.locations', {
-        //     templateUrl: 'charts.locations.html',
-        //     controller: 'LocationCtrl'
-        // })
-        // .state('home.users', {
-        //     templateUrl: 'charts.users.html',
-        //     controller: 'UserCtrl'
-        // })
         .state('about', {
             url: '/about',
             templateUrl: 'about.html'
