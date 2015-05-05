@@ -1,0 +1,39 @@
+<div class="container-fluid">
+	<select ng-model="filters.userId" class="form-control filter select-user" ng-options="user.id as user.name for user in users">
+	</select>
+
+	<div class="filter-transaction-type filter">
+		<div class="checkbox">
+			<label>
+				<input ng-model="filters.earning" type="checkbox">Earning
+			</label>
+		</div>
+		<div class="checkbox">
+			<label>
+				<input ng-model="filters.charge" type="checkbox">Charge
+			</label>
+		</div>
+		<div class="checkbox">
+			<label>
+				<input ng-model="filters.showActive" type="checkbox">Show Filters
+			</label>
+		</div>
+	</div>
+	<div ng-show="!!filters.showActive" class="filter-settings filter">
+		<ul>
+			<li>Earning: {{filters.earning}}</li>
+			<li>Charge: {{filters.charge}}</li>
+			<li>User ID: {{filters.userId}}</li>
+		</ul>
+	</div>
+
+	<button class="btn btn-primary filter-submit filter" ng-click="getTransactions({'userId': filters.userId })">Submit</button>
+</div>
+
+<div class="earnings-chart">
+	<canvas id="line" class="chart chart-line" data="earnings.data" labels="earnings.labels" legend="true" options="options" series="earnings.series"></canvas> 
+</div>
+
+<div class="charges-chart">	
+	<canvas id="line" class="chart chart-line" data="charges.data" labels="charges.labels" legend="true" options="options" series="charges.series" click="onClick"></canvas> 
+</div>

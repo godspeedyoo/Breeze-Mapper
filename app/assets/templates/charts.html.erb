@@ -1,9 +1,9 @@
 <h1>This is the charts template</h1>
 
 <ul class="nav nav-tabs">
-  <li role="presentation"><a ui-sref=".transactions">Transactions</a></li>
-  <li role="presentation"><a href=".users">Users</a></li>
-  <li role="presentation"><a href=".locations">Locations</a></li>
+  <li role="presentation"><a ui-sref="transactions">Transactions</a></li>
+  <li role="presentation"><a ui-sref="users">Users</a></li>
 </ul>
 
-<div ui-view></div>
+<div ui-view="transactions"></div>
+<div ui-view="users"></div>

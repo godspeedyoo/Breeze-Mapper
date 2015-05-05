@@ -13,27 +13,28 @@ angular
         .state('home', {
             url: '/',
             views: {
-                '': { 
-                    templateUrl: 'home.html',
-                    controller: 'HomeCtrl'
-                },
-                'chart@home': {
-                    templateUrl: 'charts.html'
-                }
+                '@': { templateUrl: 'home.html'},
+                'test@home': { templateUrl: 'test.html' },
+                'charts@home': { templateUrl: 'charts.html' }
+                
             }
         })
-        .state('home.transactions', {
-            templateUrl: 'charts.transactions.html',
-            controller: 'TransactionCtrl'
-        })
-        .state('home.locations', {
-            templateUrl: 'charts.locations.html',
-            controller: 'LocationCtrl'
-        })
-        .state('home.users', {
-            templateUrl: 'charts.users.html',
-            controller: 'UserCtrl'
-        })
+        //     templateUrl: 'charts.html',
+        //     views: {
+        //         'transactions@chart': {
+        //             templateUrl: 'charts.transactions.html',
+        //             controller: 'TransactionCtrl'
+        //         }
+        //     }
+        // })
+        // .state('home.locations', {
+        //     templateUrl: 'charts.locations.html',
+        //     controller: 'LocationCtrl'
+        // })
+        // .state('home.users', {
+        //     templateUrl: 'charts.users.html',
+        //     controller: 'UserCtrl'
+        // })
         .state('about', {
             url: '/about',
             templateUrl: 'about.html'
@@ -44,17 +45,6 @@ angular
     // enable HTML5 Mode for SEO
     // $locationProvider.html5Mode(true);
 })
-.run(function($rootScope) {
-
-    $rootScope.UTIL = {
-        suppressLabels: function(chartLabels, div) {
-            var suppressMod = parseInt(chartLabels.length / div);
-            var suppressed = [];
-            chartLabels.forEach(function(el, i, arr) {
-                if (i % suppressMod != 0) { suppressed.push("") }
-                else { suppressed.push(el) }
-            });
-            return suppressed;
-        }
-    };
+.run(function($state) {
+    $state.go('home');
 });
