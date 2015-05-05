@@ -5,11 +5,10 @@ angular.module('myApp')
 	var transactions = {};
 
 	transactions.getTransactions = function(options) {
-		return $http.get('/transactions' + 
-											'?user_id=' + options['user_id'] +
-											'?type=' + options['type']);
+		var userOption = options['user_id'] ? '?user_id=' + options['user_id'] : "";
+		var typeOption = options['type'] ? '?type=' + options['type'] : "";
+		return $http.get('/transactions' + userOption + typeOption);
 	}
-	
 
 	return transactions;
 }]);
