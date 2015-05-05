@@ -1,27 +1,31 @@
 <h1 class="slide" slide-toggle="#chart">This is the charts template</h1>
 <div id="chart" class="slideable">
 
-	User:
-	<select ng-model="filters.userId" class="form-control select-user" ng-options="user.id as user.name for user in users">
-	</select>
+	<div class="container-fluid">
+		<select ng-model="filters.userId" class="form-control filter select-user" ng-options="user.id as user.name for user in users">
+		</select>
 
-	<div class="checkbox">
-		<label>
-			<input ng-model="filters.earning" type="checkbox">Earning
-		</label>
+		<div class="filter-transaction-type filter">
+			<div class="checkbox">
+				<label>
+					<input ng-model="filters.earning" type="checkbox">Earning
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input ng-model="filters.charge" type="checkbox">Charge
+				</label>
+			</div>
+		</div>
+		<div class="filter-settings filter">
+			<p>{{filters.earning}}
+			{{filters.charge}}
+			{{filters.userId}}
+			{{transactionType}}</p>
+		</div>
+
+		<button class="btn btn-primary filter-submit filter" ng-click="getTransactions({'userId': filters.userId })">Submit</button>
 	</div>
-	<div class="checkbox">
-		<label>
-			<input ng-model="filters.charge" type="checkbox">Charge
-		</label>
-	</div>
-
-	<p>{{filters.earning}}
-	{{filters.charge}}
-	{{filters.userId}}
-	{{transactionType}}</p>
-
-	<button class="btn btn-primary" ng-click="getTransactions({'userId': filters.userId })">Submit</button>
 
 	<canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" options="options" series="series" click="onClick"></canvas> 
 	
