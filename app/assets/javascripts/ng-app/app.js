@@ -11,7 +11,7 @@ angular
 
     $stateProvider
         .state('home', {
-            url: '/',
+            url: '',
             views: {
                 '@': { templateUrl: 'home.html'},
                 'test@home': { templateUrl: 'test.html' },
@@ -22,6 +22,16 @@ angular
             url: '/transactions',
             templateUrl: 'charts.transactions.html',
             controller: 'TransactionCtrl'
+        })
+        .state('home.users', {
+            url: '/users',
+            templateUrl: 'charts.users.html',
+            controller: 'UserCtrl'
+        })
+        .state('home.locations', {
+            url: '/locations',
+            templateUrl: 'charts.locations.html',
+            controller: 'LocationCtrl'
         })
         //     templateUrl: 'charts.html',
         //     views: {
@@ -44,7 +54,7 @@ angular
             templateUrl: 'about.html'
         });
     // default fall back route
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('');
 
     // enable HTML5 Mode for SEO
     // $locationProvider.html5Mode(true);
@@ -57,4 +67,5 @@ angular
       // to active whenever 'contacts.list' or one of its decendents is active.
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+        $state.go('home');
       }]);
