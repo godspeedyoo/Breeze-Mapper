@@ -50,8 +50,8 @@ angular
     // enable HTML5 Mode for SEO
     // $locationProvider.html5Mode(true);
 })
-.run(['$rootScope', '$state', '$stateParams',
-      function ($rootScope, $state, $stateParams) {
+.run(['$rootScope', '$state', '$stateParams', 'dataService',
+      function ($rootScope, $state, $stateParams, dataService) {
       // It's very handy to add references to $state and $stateParams to the $rootScope
       // so that you can access them from any scope within your applications.For example,
       // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
@@ -59,4 +59,12 @@ angular
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
         $state.go('home');
+
+        
+        dataService.getData().success(function(response) {
+            console.log(response);
+            debugger;
+        })
+
+
       }]);

@@ -20,7 +20,6 @@ function ($scope,
 
   dataService.getData().success(function(response) {
     console.log(response);
-    debugger;
   })
   
   // listen for the updated users broadcast and store data in controller scope
