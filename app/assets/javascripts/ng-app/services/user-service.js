@@ -19,26 +19,55 @@ angular.module('myApp')
 	// to see the ramifications of how I structure my backend/front end by experimenting in
 	// this manner. 
 
-	// CONS: Right now, it seems like there is more programming overhead in writing
-	// code to package my data from the rails controller as well as extracting the bits I need
-	// from these services.
+	// PROS: 
+		// 1) The client only loads data from the server once, and never needs to create
+		// 		another http request to the server! 
+		// 2) I can also handle and interpret the data from dataService within userService in any way 
+		// 		I want. For example, I can calculate averages, means, mode, and other statistics that
+		// 		would be inferred from my source data without adding complexity to the server side.
 
-	// PROS: The client only loads data from the server once, and never needs to create
-	// another http request to the server!
+
+	// CONS: 
+		// 1) It seems like there is more programming overhead in writing
+		// 		code to package my data from the rails controller as well as extracting the bits I need
+		// 		from these services.
+
 
 	var serviceObj = {};
 	serviceObj.users = [];
 	var users;
+	var trans;
 
 	$rootScope.$on('dataUpdated', function() {
 		users = dataService.data;
 
+		// iterate through each user to store name and id
 		for (var userId in users) {
+			trans = users[userId].transactions;
 			serviceObj.users.push({id: userId, name: users[userId].name});
-		}
 
+			// iterate through each user's transactions to store transaction statistics
+			var total_earnings, total_charges;
+
+			for (var t in trans) {
+				if (trans[t].transaction_type === 'earning') {
+					total_earnings = trans[t].amount;
+					// total up amounts based on transaction type and store in object
+					serviceObj.users[serviceObj.users.length - 1]['total_earnings'] 
+						= parseFloat(total_earnings).toFixed(2);
+				} else if (trans[t].transaction_type === 'charge') {
+					total_charges = trans[t].amount;
+					serviceObj.users[serviceObj.users.length - 1]['total_charges'] 
+						= parseFloat(total_charges).toFixed(2);
+				}
+			}			
+		}
 		$rootScope.$broadcast('usersUpdated');
 	})
+
+
+
+
 
 	return serviceObj;
 }]);
