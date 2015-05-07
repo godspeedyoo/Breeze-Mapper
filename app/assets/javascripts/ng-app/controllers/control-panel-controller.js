@@ -17,10 +17,6 @@ function ($scope,
   userService.getUsers().success(function(response) {
     ctrlPanelService.updateUsers(response);
   })
-
-  dataService.getData().success(function(response) {
-    console.log(response);
-  })
   
   // listen for the updated users broadcast and store data in controller scope
   // this pattern is used throughout the app to decouple controllers from being

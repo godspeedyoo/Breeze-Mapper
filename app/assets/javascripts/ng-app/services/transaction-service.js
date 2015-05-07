@@ -9,7 +9,5 @@ angular.module('myApp')
 		return $http.get('/transactions' + '?' + userOption)
 	}
 
-
-
 	return transactions;
 }]);
