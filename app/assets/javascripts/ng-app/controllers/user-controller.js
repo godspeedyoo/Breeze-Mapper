@@ -3,11 +3,11 @@ angular.module('myApp')
  function(userService, $scope, $rootScope, ctrlPanelService) {
 
  	// initialize data
- 	$scope.users = ctrlPanelService.users;
+ 	$scope.users = userService.users;
 
 	// listeners waiting for control panel changes
-  $rootScope.$on('updateUsers', function() {
-    $scope.users = ctrlPanelService.users;
+  $rootScope.$on('usersUpdated', function() {
+    $scope.users = userService.users;
   });
 
 }]);
