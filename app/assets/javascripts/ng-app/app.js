@@ -33,7 +33,7 @@ $stateProvider
     .state('home.users', {
         url: '/users',
         templateUrl: 'charts.users.html',
-        controller: 'UserCtrl'
+        controller: 'UserTabCtrl'
     })
     .state('home.locations', {
         url: '/locations',

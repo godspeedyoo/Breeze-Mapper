@@ -1,5 +1,5 @@
 angular.module('myApp')
-.controller('UserCtrl', ['userService', '$scope', '$rootScope', 'ctrlPanelService',
+.controller('UserTabCtrl', ['userService', '$scope', '$rootScope', 'ctrlPanelService',
  function(userService, $scope, $rootScope, ctrlPanelService) {
 
  	// initialize data

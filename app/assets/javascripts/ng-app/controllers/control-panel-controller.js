@@ -14,7 +14,9 @@ function ($scope,
 				 ctrlPanelService,
          dataService) {
 
-
+  // initialize data
+  $scope.users = userService.users;
+  
   // listen for the updated users broadcast and store data in controller scope
   // this pattern is used throughout the app to decouple controllers from being
   // dependent on each other's data and allows the control-panel-service to be a 
