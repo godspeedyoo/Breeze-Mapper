@@ -17,7 +17,9 @@ function ($scope,
 
   // listen for the updated users broadcast and store data in controller scope
   // this pattern is used throughout the app to decouple controllers from being
-  // dependent on each other's data and allows the control-panel-service to be a handler between them.
+  // dependent on each other's data and allows the control-panel-service to be a 
+  // handler between them.
+  
   $rootScope.$on('usersUpdated', function() { 
   	$scope.users = userService.users;
   });
