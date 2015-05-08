@@ -21,7 +21,7 @@ function($rootScope, $userService, locationService, transactionService) {
 	}
 
 	// define generic submit event for other controllers to use
-	settings.submit = function() { $rootScope.$broadcast('submit') };
+	settings.submit = function() { $rootScope.$broadcast('submit', settings.userId) };
 
 
 	return settings;
