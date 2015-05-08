@@ -8,7 +8,7 @@ angular.module('myApp')
 	// listeners waiting for control panel changes
   $rootScope.$on('usersUpdated', function() {
     $scope.users = userService.users;
-    
+
 
 
   });

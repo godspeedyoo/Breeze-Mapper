@@ -6,6 +6,7 @@ angular.module('myApp')
     var dataService = dataService;
     // this allows the map instance from link to be passed into the
     // controller
+    
     this.registerMap = function (myMap) {
       var center = myMap.getCenter(),
         latitude = center.lat(),
