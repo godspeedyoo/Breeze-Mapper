@@ -1,28 +1,14 @@
 angular.module('myApp')
 .directive('googleMaps', function () {
   return {
-    controller: function ($scope) {
-      var map;
+    controller: 'MapCtrl',
 
-      this.registerMap = function (myMap) {
-        var center = myMap.getCenter(),
-          latitude = center.lat(),
-          longitude = center.lng();
-
-        map = myMap;
-        $scope.latitude = latitude;
-        $scope.longitude = longitude;
-      };
-
-
-    },
     link: function (scope, elem, attrs, ctrl) {
       var mapOptions,
         latitude = attrs.latitude,
         longitude = attrs.longitude,
         map;
 
-      
       mapOptions = {
         zoom: 8,
         disableDefaultUI: true,

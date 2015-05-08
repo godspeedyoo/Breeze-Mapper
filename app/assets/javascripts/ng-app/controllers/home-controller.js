@@ -1,6 +1,6 @@
 angular.module('myApp')
 .controller('HomeCtrl', ['locationService', 'userService', 'transactionService','$scope', 
-  function(locationService, userService, transactionService, $scope) {
+  function (locationService, userService, transactionService, $scope) {
 
   // locationService.getLocations().success(function(response) {
   // 	$scope.locations = response;
