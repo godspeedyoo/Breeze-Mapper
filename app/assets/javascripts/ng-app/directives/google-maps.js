@@ -11,7 +11,6 @@ angular.module('myApp')
 
       mapOptions = {
         zoom: 8,
-        disableDefaultUI: true,
         center: new google.maps.LatLng(latitude, longitude)
       };
 
@@ -20,7 +19,7 @@ angular.module('myApp')
       // pass instance of map to controller
       ctrl.registerMap(map);
 
-      
+
     }
   }
 

@@ -14,30 +14,36 @@ angular.module('myApp')
       map = myMap;
       $scope.latitude = latitude;
       $scope.longitude = longitude;
-      console.log("Map registered.");
     };
 
-
+    // populates an array of LatLng objects
     $scope.getLocations = function (userId) {
-      $scope.locations = dataService.data[userId].locations;
+      $scope.locations = [];
+      var locations = dataService.data[userId].locations;
+      for (loc in locations) {
+        $scope.locations.push(new google.maps.LatLng(
+          locations[loc].latitude, 
+          locations[loc].longitude));
+      }
     }
 
-    $scope.generateMarkers = function () {
+    $scope.dropWithTimeout = function (marker) {
+      setTimeout(function() { $scope.addMarker(marker) }, 500);
+    }
+
+    $scope.drop = function () {
       $scope.clearMarkers();
-
-      var locations = $scope.locations;
-      for (loc in locations) {
-
-        var myLatLng = new google.maps.LatLng(
-          locations[loc].latitude, 
-          locations[loc].longitude);
-
-        markers.push(new google.maps.Marker({
-          position: myLatLng,
-          map: map
-        }));
-                
+      for (var i = 0; i < $scope.locations.length; i++) {
+        $scope.dropWithTimeout($scope.locations[i]);
       }
+    }
+
+    $scope.addMarker = function (position) {
+      markers.push(new google.maps.Marker({
+        position: position,
+        map: map,
+        animation: google.maps.Animation.DROP
+      }));
     }
 
     $scope.clearMarkers = function () {
@@ -51,7 +57,7 @@ angular.module('myApp')
     // Listen for the 'submit' event coming from control panel
     $rootScope.$on('submit', function (scope, userId) {
       $scope.getLocations(userId);
-      $scope.generateMarkers();
+      $scope.drop();
       // $scope.latitude = 40;
       // $scope.longitude = -130;
       // map.setCenter(new google.maps.LatLng($scope.latitude, $scope.longitude));
