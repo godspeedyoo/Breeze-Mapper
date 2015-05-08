@@ -1,14 +1,12 @@
 'use strict';
 
 angular.module('myApp')
-.factory('locationService', ['$http', function($http) {
-	var locations = {};
-	var url = '/locations'
+.factory('locationService', ['dataService', '$rootScope', function(dataService, $rootScope) {
+	var locations = {} ;
 
-	locations.getLocations = function() {
-		return $http.get('/locations')
-	}
-
+	$rootScope.$on('dataUpdated', function () {
+		
+	})
 
 	return locations
 }]);
