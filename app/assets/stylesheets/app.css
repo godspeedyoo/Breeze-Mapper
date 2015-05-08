@@ -1,0 +1,20 @@
+.navbar {
+	border-radius: 0px;
+	border-bottom: 1px solid lightgray;
+}
+
+.maps, .charts {
+	max-width: 600px;
+}
+
+.navbar-header, .navbar-nav {
+	display: inline-block;
+}
+
+.navbar-nav {
+	float: right;
+	margin-right: 20px;
+}
+.navbar-nav > li {
+	display: inline-block;
+}
