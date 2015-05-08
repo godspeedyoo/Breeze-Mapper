@@ -1,3 +1,7 @@
 .ctrl-panel-submit {
 	float: right;
 }
+
+.user-select {
+	display: inline-block;
+}
