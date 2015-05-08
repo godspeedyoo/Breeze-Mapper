@@ -16,7 +16,10 @@ $stateProvider
             // target root 
             '@': { templateUrl: 'home.html'},
             // target test section of home page
-            'test@home': { templateUrl: 'test.html' },
+            'maps@home': { 
+                templateUrl: 'maps.html',
+                controller: 'HomeCtrl'
+            },
             'control@home': { 
                 templateUrl: 'control-panel.html',
                 controller: 'CtrlPanelCtrl'
