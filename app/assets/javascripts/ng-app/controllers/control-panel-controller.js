@@ -3,14 +3,12 @@ angular.module('myApp')
 															'$rootScope', 
 															'userService',
 															'locationService',
-															'transactionService',
 															'ctrlPanelService',
                               'dataService',
 function ($scope, 
 				 $rootScope, 
 				 userService, 
 				 locationService, 
-				 transactionService,
 				 ctrlPanelService,
          dataService) {
 
