@@ -17,7 +17,10 @@ angular.module('myApp')
 
       map = new google.maps.Map(elem[0], mapOptions);
 
+      // pass instance of map to controller
       ctrl.registerMap(map);
+
+      
     }
   }
 
