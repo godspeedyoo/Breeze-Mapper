@@ -4,14 +4,13 @@ angular.module('myApp')
     var map;
     var markers = [];
     var dataService = dataService;
+    
     // this allows the map instance from link to be passed into the
     // controller
-    
     this.registerMap = function (myMap) {
       var center = myMap.getCenter(),
         latitude = center.lat(),
         longitude = center.lng();
-
       map = myMap;
       $scope.latitude = latitude;
       $scope.longitude = longitude;
@@ -28,11 +27,7 @@ angular.module('myApp')
       }
     }
 
-    $scope.dropWithTimeout = function (marker) {
-      setTimeout(function() { $scope.addMarker(marker) }, 500);
-    }
-
-    $scope.drop = function () {
+    $scope.renderMarkers = function () {
       $scope.clearMarkers();
       for (var i = 0; i < $scope.locations.length; i++) {
         $scope.addMarker($scope.locations[i]);
@@ -60,35 +55,11 @@ angular.module('myApp')
         bounds.extend(markers[i].getPosition());
         map.fitBounds(bounds);
       }
-      // bounds.extend(myLatlng); map.fitBounds(bounds);
-      // map.setCenter(bounds.getCenter());
-
-      // map.fitBounds(bounds);
     }
-    
-    // var markers = //some array;
-    // var bounds = new google.maps.LatLngBounds();
-    // for(i=0;i<markers.length;i++) {
-    //  bounds.extend(markers[i].getPosition());
-    // }
 
-    // map.fitBounds(bounds);
-
-
-    // Listen for the 'submit' event coming from control panel
     $rootScope.$on('submit', function (scope, userId) {
       $scope.getLocations(userId);
-      $scope.drop();
+      $scope.renderMarkers();
       $scope.setZoom();
-      // $scope.latitude = 40;
-      // $scope.longitude = -130;
-      // map.setCenter(new google.maps.LatLng($scope.latitude, $scope.longitude));
     })
 }]);
-
-
-  // var marker = new google.maps.Marker({
-  //     position: myLatlng,
-  //     map: map,
-  //     title: 'Hello World!'
-  // });
