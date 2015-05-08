@@ -8,14 +8,12 @@ angular.module('myApp')
 	// listeners waiting for control panel changes
   $rootScope.$on('usersUpdated', function() {
     $scope.users = userService.users;
-
-
-
   });
 
+  // default orderBy id ascending
+	$scope.filterString = "id";
 
-	$scope.filterString = "-id";
-
+	// apply different orderBy criteria based clicked table header
   $scope.setFilter = function(newFilter) {
     if ($scope.filterString === undefined) { 
       $scope.filterString = newFilter;
@@ -32,6 +30,4 @@ angular.module('myApp')
       $scope.filterString = '+' + newFilter;
     }
   }
-
-
 }]);
