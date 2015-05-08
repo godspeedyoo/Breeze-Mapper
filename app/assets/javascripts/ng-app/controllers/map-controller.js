@@ -34,7 +34,7 @@ angular.module('myApp')
     $scope.drop = function () {
       $scope.clearMarkers();
       for (var i = 0; i < $scope.locations.length; i++) {
-        $scope.dropWithTimeout($scope.locations[i]);
+        $scope.addMarker($scope.locations[i]);
       }
     }
 
@@ -53,11 +53,32 @@ angular.module('myApp')
       markers = [];
     }
 
+    $scope.setZoom = function () {
+      var bounds = new google.maps.LatLngBounds();
+      for (var i = 0; i < markers.length; i++) {
+        bounds.extend(markers[i].getPosition());
+        map.fitBounds(bounds);
+      }
+      // bounds.extend(myLatlng); map.fitBounds(bounds);
+      // map.setCenter(bounds.getCenter());
+
+      // map.fitBounds(bounds);
+    }
+    
+    // var markers = //some array;
+    // var bounds = new google.maps.LatLngBounds();
+    // for(i=0;i<markers.length;i++) {
+    //  bounds.extend(markers[i].getPosition());
+    // }
+
+    // map.fitBounds(bounds);
+
 
     // Listen for the 'submit' event coming from control panel
     $rootScope.$on('submit', function (scope, userId) {
       $scope.getLocations(userId);
       $scope.drop();
+      $scope.setZoom();
       // $scope.latitude = 40;
       // $scope.longitude = -130;
       // map.setCenter(new google.maps.LatLng($scope.latitude, $scope.longitude));
