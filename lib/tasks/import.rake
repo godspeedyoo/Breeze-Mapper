@@ -1,4 +1,4 @@
-desc "Imports a CSV file into an ActiveRecord table"
+t
 
 require 'csv'
 

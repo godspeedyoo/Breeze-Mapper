@@ -18,8 +18,6 @@ angular.module('myApp')
 
       // pass instance of map to controller
       ctrl.registerMap(map);
-
-
     }
   }
 

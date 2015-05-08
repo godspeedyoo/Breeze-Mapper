@@ -9,8 +9,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bower-rails', '~> 0.9.2'
 gem 'angular-rails-templates'
 gem 'chart-js-rails'
-gem 'byebug'
 gem 'dotenv-rails'
+gem 'execjs'
+gem 'rails_12factor', group: :production
+
 # gem 'turbolinks'
 
 
