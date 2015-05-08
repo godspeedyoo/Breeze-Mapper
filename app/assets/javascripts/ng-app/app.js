@@ -4,8 +4,7 @@ angular
     'ui.router',
     'templates',
     'chart.js',
-    'ui.bootstrap',
-    'angularSlideables'
+    'ui.bootstrap'
 ])
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
