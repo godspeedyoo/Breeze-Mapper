@@ -3,18 +3,18 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Total Earnings</th>
-      <th>Total Charges</th>
+      <th ng-click="setFilter('id')">ID</th>
+      <th ng-click="setFilter('name')">Name</th>
+      <th ng-click="setFilter('total_earnings')">Total Earnings</th>
+      <th ng-click="setFilter('total_charges')">Total Charges</th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="user in users | filter: query">
+    <tr ng-repeat="user in users | filter: query | orderBy: filterString">
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
-      <td class="currency">{{user.total_earnings}}</td>
-      <td class="currency">{{user.total_charges}}</td>
+      <td class="currency">{{user.total_earnings | currency}}</td>
+      <td class="currency">{{user.total_charges | currency}}</td>
     </tr>
   </tbody>
 </table>

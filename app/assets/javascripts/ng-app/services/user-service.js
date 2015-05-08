@@ -44,7 +44,7 @@ angular.module('myApp')
 		// iterate through each user to store name and id
 		for (var userId in users) {
 			trans = users[userId].transactions;
-			serviceObj.users.push({id: userId, name: users[userId].name});
+			serviceObj.users.push({id: parseInt(userId), name: users[userId].name});
 
 			// iterate through each user's transactions to store transaction statistics
 			var total_earnings, total_charges;
@@ -60,7 +60,12 @@ angular.module('myApp')
 					serviceObj.users[serviceObj.users.length - 1]['total_charges'] 
 						= parseFloat(total_charges).toFixed(2);
 				}
-			}			
+			}		
+			serviceObj.users[serviceObj.users.length - 1]['total_charges'] = 
+			parseFloat(serviceObj.users[serviceObj.users.length - 1]['total_charges']);
+
+			serviceObj.users[serviceObj.users.length - 1]['total_earnings'] = 
+			parseFloat(serviceObj.users[serviceObj.users.length - 1]['total_earnings']);
 		}
 		$rootScope.$broadcast('usersUpdated');
 	})
