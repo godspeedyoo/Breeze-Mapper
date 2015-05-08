@@ -17,7 +17,7 @@ $stateProvider
             // target test section of home page
             'maps@home': { 
                 templateUrl: 'maps.html',
-                controller: 'HomeCtrl'
+                controller: 'MapCtrl'
             },
             'control@home': { 
                 templateUrl: 'control-panel.html',
