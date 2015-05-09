@@ -1,5 +1,5 @@
 angular.module('myApp')
-.directive('googleMaps', function () {
+.directive('googleMaps', [function () {
   return {
     controller: 'MapCtrl',
 
@@ -21,5 +21,5 @@ angular.module('myApp')
     }
   }
 
-});
+}]);
 
