@@ -10,8 +10,13 @@ gem 'bower-rails', '~> 0.9.2'
 gem 'angular-rails-templates'
 gem 'chart-js-rails'
 gem 'dotenv-rails'
-gem 'execjs'
-gem 'rails_12factor', group: :production
+
+gem "foreman"
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end
 
 # gem 'turbolinks'
 
