@@ -1,0 +1,9 @@
+{
+  "name": "my-app",
+  "devDependencies": {
+    "bower": "latest"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  }
+}
