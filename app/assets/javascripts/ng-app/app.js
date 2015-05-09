@@ -6,7 +6,8 @@ angular
     'chart.js',
     'ui.bootstrap'
 ])
-.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
+    function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
 $stateProvider
     .state('home', {
@@ -46,7 +47,7 @@ $urlRouterProvider.otherwise('');
 
 // enable HTML5 Mode for SEO
 // $locationProvider.html5Mode(true);
-})
+}])
 .run(['$rootScope', '$state', '$stateParams', 'dataService',
   function ($rootScope, $state, $stateParams, dataService) {
   // It's very handy to add references to $state and $stateParams to the $rootScope
