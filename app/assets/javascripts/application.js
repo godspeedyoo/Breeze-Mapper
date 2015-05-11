@@ -18,7 +18,7 @@
 //= require angular/angular
 //= require angular-animate
 //= require Chart.js/Chart
-//= require Chart
+
 //= require angular-chart.js/angular-chart
 //= require angular-ui-router
 //= require angular-rails-templates
