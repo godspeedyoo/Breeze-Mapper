@@ -1,18 +1,21 @@
+li > a {
+	
+}
+
 .navbar {
 	border-radius: 0px;
 	border-bottom: 1px solid lightgray;
 }
 
 .navbar-header, .navbar-nav {
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 .navbar-nav {
-	float: right;
-	margin-right: 20px;
+	/*margin-right: 20px;*/
 }
 .navbar-nav > li {
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 .well {
@@ -21,8 +24,9 @@
 	margin: 4px;
 }
 
-.map-container, .users-container {
-	border: 15px solid black;
+.map-container, .users-container, .chart-widget {
+	border: 1px solid black;
+	margin-bottom: 10px;
 	border-radius: 4px;
 	padding: 5px;
 }
