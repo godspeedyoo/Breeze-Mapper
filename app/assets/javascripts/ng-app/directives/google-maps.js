@@ -1,7 +1,7 @@
 angular.module('myApp')
 .directive('googleMaps', [function () {
   return {
-    controller: ['MapCtrl'],
+    controller: 'MapCtrl',
 
     link: function (scope, elem, attrs, ctrl) {
       var mapOptions,
