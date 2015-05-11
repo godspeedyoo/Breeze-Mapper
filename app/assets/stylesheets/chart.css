@@ -1,6 +1,16 @@
-
+.chart-container {
+	display: inline-block;
+	width: 100%;
+}
 
 .chart {
-	max-width: 800px;
+	width: 100%;
 	display: inline-block;
+}
+
+@media (min-width: 767px) {
+	.chart {
+		width: 50%;
+	}
+	
 }
