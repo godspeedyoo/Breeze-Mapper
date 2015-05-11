@@ -4,10 +4,13 @@
 	</div>
     <hr>
     <div class="row">
- 		<div class="map-container" ui-view="maps"></div>
-    	<div ui-view="transactions"></div>
-		<div class="users-container" ui-view="users"></div>
-    </div>
+    	<div class="col-sm-6">
+ 			<div class="map-container" ui-view="maps"></div>
+			<div ui-view="transactions"></div>
+    	</div>
+    	<div class="col-sm-6">
+			<div class="users-container" ui-view="users"></div>
+    	</div>
  	<hr>
 </div>
 

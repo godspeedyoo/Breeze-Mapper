@@ -16,7 +16,8 @@ angular.module('myApp')
 
       map = new google.maps.Map(elem[0], mapOptions);
 
-      // pass instance of map to controller
+      // pass instance of map to controller to allow maniuplation of google map
+      // objects within controller.
       ctrl.registerMap(map);
     }
   }

@@ -21,9 +21,12 @@
 	margin: 4px;
 }
 
-.users-container {
+.map-container, .users-container {
+	border: 8px solid black;
+	padding: 5px;
+}
+/*.users-container {
 	display: inline-block;
-	float: right;
 	position: absolute;
 	top: 150px;
 	right: 30px;
@@ -38,7 +41,7 @@
 		right: 0px;
 	}
 }
-
+*/
 .select-user {
 	max-width: 200px;
 }
