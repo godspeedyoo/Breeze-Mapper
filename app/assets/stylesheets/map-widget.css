@@ -1,5 +1,21 @@
+
+
+.map-container {
+	display: inline-block;
+	width: 50%;
+}
+
+@media (max-width: 767px) {
+	.map-container {
+		width: 100%;
+	}
+}
+
+
 #map-canvas {
 	height: 400px;
+	width: 100%;
 	margin: 0;
 	padding: 0;
+	display: inline-block;
 }

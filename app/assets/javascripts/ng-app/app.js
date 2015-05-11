@@ -25,7 +25,17 @@ $stateProvider
                 controller: 'CtrlPanelCtrl'
             },
             // target chart section of home page
-            'charts@home': { templateUrl: 'charts.html' }
+            'charts@home': { templateUrl: 'charts.html' 
+            },
+            'transactions@home': {
+                templateUrl: 'charts.transactions.html',
+                controller: 'TransactionCtrl'
+            },
+            'users@home': {
+                templateUrl: 'charts.users.html',
+                controller: 'UserTabCtrl'
+            }
+
         }
     })
     .state('home.transactions', {

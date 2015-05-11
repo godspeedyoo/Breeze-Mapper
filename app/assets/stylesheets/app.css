@@ -3,8 +3,9 @@
 	border-bottom: 1px solid lightgray;
 }
 
-.maps, .charts {
-	max-width: 600px;
+.chart-container {
+	display: inline-block;
+	max-width: 400px;
 }
 
 .navbar-header, .navbar-nav {
@@ -17,4 +18,29 @@
 }
 .navbar-nav > li {
 	display: inline-block;
+}
+
+.well {
+	background-color: #fff;
+	padding: 5px;
+	margin: 4px;
+}
+.select-user {
+	max-width: 200px;
+}
+
+.select-transaction-type {
+	max-width: 150px;
+}
+
+.filter {
+	display: inline-block;
+}
+
+.transaction-type {
+	padding: 10px;
+}
+
+th:hover {
+	cursor: pointer;
 }

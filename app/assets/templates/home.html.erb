@@ -1,8 +1,13 @@
 <div class="container-fluid">
-    <div ui-view="control"></div>
+    <div class="row">
+    	<div ui-view="control"></div>
+	</div>
     <hr>
- 	<div ui-view="maps"></div>
+    <div class="row">
+ 		<div class="map-container" ui-view="maps"></div>
+    	<div class="chart-container" ui-view="transactions"></div>
+		<div ui-view="users"></div>
+    </div>
  	<hr>
-    <div ui-view="charts"></div>
 </div>
 
