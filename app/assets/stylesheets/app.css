@@ -22,7 +22,8 @@
 }
 
 .map-container, .users-container {
-	border: 8px solid black;
+	border: 15px solid black;
+	border-radius: 4px;
 	padding: 5px;
 }
 /*.users-container {
