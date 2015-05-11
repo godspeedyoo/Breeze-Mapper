@@ -1,21 +1,6 @@
-li > a {
-	
-}
-
 .navbar {
 	border-radius: 0px;
 	border-bottom: 1px solid lightgray;
-}
-
-.navbar-header, .navbar-nav {
-	/*display: inline-block;*/
-}
-
-.navbar-nav {
-	/*margin-right: 20px;*/
-}
-.navbar-nav > li {
-	/*display: inline-block;*/
 }
 
 .well {
@@ -30,23 +15,7 @@ li > a {
 	border-radius: 4px;
 	padding: 5px;
 }
-/*.users-container {
-	display: inline-block;
-	position: absolute;
-	top: 150px;
-	right: 30px;
-}
 
-@media (max-width: 767px) {
-	.users-container {
-		width: 100%;
-		float: none;
-		position: relative;
-		top: 0px;
-		right: 0px;
-	}
-}
-*/
 .select-user {
 	max-width: 200px;
 }
