@@ -1,8 +1,12 @@
 <div class="container-fluid">
 	<div class="row">
-		<h5 class="user-select">Select User</h5>
-		<select ng-model="userId" class="form-control filter select-user" ng-options="user.id as user.name for user in users">
-		</select>
-		<button class="btn btn-default ctrl-panel-submit" ng-click="submit()">Submit</button>
+		<h5 class="user-header">Select User</h5>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<select ng-model="userId" class="form-control filter select-user" ng-options="user.id as user.name for user in users">
+			</select>
+			<button class="btn btn-default ctrl-panel-submit" ng-click="submit()">Submit</button>
+		</div>
 	</div>
 </div>
