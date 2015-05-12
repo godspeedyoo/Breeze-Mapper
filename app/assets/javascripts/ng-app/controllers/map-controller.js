@@ -22,7 +22,6 @@ angular.module('myApp')
       map = myMap;
       $scope.latitude = latitude;
       $scope.longitude = longitude;
-
     };
 
     // populates an array of LatLng objects
@@ -91,7 +90,4 @@ angular.module('myApp')
         map.fitBounds(bounds);
       }
     }
-
-
-
 }]);

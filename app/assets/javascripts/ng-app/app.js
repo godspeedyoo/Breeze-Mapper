@@ -38,16 +38,6 @@ $stateProvider
 
         }
     })
-    .state('home.transactions', {
-        url: '/transactions',
-        templateUrl: 'charts.transactions.html',
-        controller: 'TransactionCtrl'
-    })
-    .state('home.users', {
-        url: '/users',
-        templateUrl: 'charts.users.html',
-        controller: 'UserTabCtrl'
-    })
     .state('about', {
         url: '/about',
         templateUrl: 'about.html'
@@ -60,17 +50,12 @@ $urlRouterProvider.otherwise('');
 }])
 .run(['$rootScope', '$state', '$stateParams', 'dataService',
   function ($rootScope, $state, $stateParams, dataService) {
-  // It's very handy to add references to $state and $stateParams to the $rootScope
-  // so that you can access them from any scope within your applications.For example,
-  // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
-  // to active whenever 'contacts.list' or one of its decendents is active.
-    $rootScope.$state = $state;
-    $rootScope.$stateParams = $stateParams;
-    $state.go('home.transactions');
+    // used for debugging and checking on $state throughout app
+    // $rootScope.$state = $state;
+    // $rootScope.$stateParams = $stateParams;
 
+    $state.go('home');
 
+    // Initialize app by eager loading relevant data
     dataService.getData();
-    $rootScope.$on('dataUpdated', function() { console.log(dataService.data) });
-
-
   }]);

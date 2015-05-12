@@ -2,15 +2,11 @@ angular.module('myApp')
 .controller('CtrlPanelCtrl', ['$scope', 
 															'$rootScope', 
 															'userService',
-															'locationService',
 															'ctrlPanelService',
-                              'dataService',
 function ($scope, 
 				 $rootScope, 
 				 userService, 
-				 locationService, 
-				 ctrlPanelService,
-         dataService) {
+				 ctrlPanelService) {
 
   // initialize data
   $scope.users = userService.users;

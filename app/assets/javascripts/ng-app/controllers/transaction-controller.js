@@ -1,12 +1,12 @@
+'use strict';
+
 angular.module('myApp')
 .controller('TransactionCtrl', ['userService', 
-                                'locationService', 
                                 'transactionService',
                                 'ctrlPanelService', 
                                 '$scope',
                                 '$rootScope',
   function (userService, 
-            locationService, 
             transactionService, 
             ctrlPanelService,
             $scope,
@@ -35,7 +35,7 @@ angular.module('myApp')
 
 
   $rootScope.$on('submit', function() {
-    // define options to pass to service - refactor if use of options is extended later
+    // define options to pass to service
     var options = {'userId': $scope.userId };
     // reset data if it exists
     $scope.resetChartData();
@@ -47,8 +47,6 @@ angular.module('myApp')
       earnings.forEach(function(el, i, arr) {
         $scope.earnings.data[0].push(parseInt(el.amount));
         $scope.earnings.labels.push(el.created_at.split('T')[0].slice());
-        // if (i % 20 != 0 && earnings.length > 20) { $scope.earningsLabels.push("") }
-        // else { $scope.earningslabels.push( el.created_at.split('T')[0].slice() )}
       });
 
       charges.forEach(function(el, i, arr) {
@@ -57,11 +55,5 @@ angular.module('myApp')
       });
     })
   });
-  
-  // chart.js 
-  // $scope.onClick = function (points, evt) {
-  //    console.log(points, evt);
-  // };
-
 
 }]);

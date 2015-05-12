@@ -4,9 +4,4 @@ class LocationController < ApplicationController
 		render :json => @locations
 	end
 
-	
-
-
-
-
 end
