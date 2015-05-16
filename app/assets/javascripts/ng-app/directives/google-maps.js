@@ -4,10 +4,10 @@ angular.module('myApp')
     controller: 'MapCtrl',
 
     link: function (scope, elem, attrs, ctrl) {
-      var mapOptions,
-        latitude = attrs.latitude,
-        longitude = attrs.longitude,
-        map;
+      var mapOptions;
+      var latitude = attrs.latitude;
+      var longitude = attrs.longitude;
+      var map;
 
       mapOptions = {
         zoom: 8,
