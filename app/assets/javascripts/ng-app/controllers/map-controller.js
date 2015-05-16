@@ -16,9 +16,9 @@ angular.module('myApp')
     // this.registerMap allows the map instance from link (in the directive) 
     // to be passed into the controller.
     this.registerMap = function (myMap) {
-      var center = myMap.getCenter(),
-        latitude = center.lat(),
-        longitude = center.lng();
+      var center = myMap.getCenter();
+      var latitude = center.lat();
+      var longitude = center.lng();
       map = myMap;
       $scope.latitude = latitude;
       $scope.longitude = longitude;
